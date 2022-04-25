@@ -33,8 +33,8 @@ exports.create = async (req, res, next) => {
 exports.update = async (req, res, next) => {
     
     Article.findOneAndUpdate({ _id: req.params.id }, req.body)
-            .then(() => {
-                res.send( { message: 'Article was updated successfully', } )
+            .then((data) => {
+                res.send(data)
             })
             .catch(next);
 };
@@ -43,8 +43,9 @@ exports.update = async (req, res, next) => {
 exports.delete = async (req, res, next) => {
     const { id } = req.params;
     const condition = { _id: id };
-    console.log(condition);
     Article.findOneAndDelete(condition)
-        .then()
+        .then(() => {
+            res.send()
+        })
         .catch(next);
 };

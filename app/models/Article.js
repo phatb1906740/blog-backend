@@ -6,6 +6,7 @@ const Article = new Schema({
     title: { type: String},
     body: { type: String},
     image: { type: String},
+    author: { type: String},
     createAt: { type: Date, default: Date.now() },
     updateAt: { type: Date, default: Date.now() },
 });

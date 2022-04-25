@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const setupArticleRoutes = require('./app/routes/article.routes');
+const setupUserRoutes = require('./app/routes/user.routes');
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.get("/", (req,res) => {
 });
 
 setupArticleRoutes(app);
+setupUserRoutes(app);
 
 module.exports = app;
